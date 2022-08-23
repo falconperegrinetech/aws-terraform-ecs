@@ -74,4 +74,24 @@ module "ecs_services" {
   ]
 }
 
+# V1.1
+# TODO: Create Auto Scaling
+# V1.2
+# TODO: Create Private Subnet
+# TODO: Create RDS Postgres Instance
+# V1.3
+# TODO: Crate Security Group RDS Postgres
+# TODO: Create Route Table
+# V1.4
+# TODO: Create all resources to Route53
+# V1.5
+# TODO: Create Application Firewall
+# V1.6
+# TODO: Create Cloudwatch and Logs
+# V1.7
+# TODO: Verify all resources
+# V2.0
+# TODO: If all resources is ok, create Release
+
+
 
