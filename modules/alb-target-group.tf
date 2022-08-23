@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "this" {
-  name        = "api-target-group"
+  name        = "api-target-group-${terraform.workspace}"
   port        = 80
   protocol    = "HTTP"
   target_type = "ip"
