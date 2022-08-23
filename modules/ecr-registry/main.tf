@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "this" {
-  name                 = "api-ecs-test"
+  name                 = "${var.prefix}-${terraform.workspace}-image"
   image_tag_mutability = "MUTABLE"
   force_delete         = true
 
@@ -7,8 +7,8 @@ resource "aws_ecr_repository" "this" {
     scan_on_push = true
   }
 
-  tags = merge(local.common_tags, {
-    "Name"        = "${var.prefix}-container-registry"
+  tags = merge(var.common_tags, {
+    "Name"        = "${var.prefix}-${terraform.workspace}-container-registry"
     "Description" = "Falcon Terraform AWS Boilerplates"
   })
 }
