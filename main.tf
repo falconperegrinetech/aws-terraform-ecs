@@ -82,6 +82,17 @@ module "autoscaling" {
   prefix           = var.prefix
 }
 
+module "database" {
+  source              = "./modules/database-instance"
+  username            = var.rds_pg_username
+  password            = var.rds_pg_password
+  deletion_protection = var.rds_pg_delete_protection
+  db_subnet_name      = module.subnets.db_subnet_name
+  security_group_id   = module.security_group.sg_postgres_id
+  common_tags         = local.common_tags
+  prefix              = var.prefix
+}
+
 # V1.1
 # DONE: Create Auto Scaling
 # V1.2
@@ -95,7 +106,7 @@ module "autoscaling" {
 # V1.5
 # TODO: Create Application Firewall
 # V1.6
-# TODO: Create Cloudwatch and Logs
+# DONE: Create Cloudwatch and Logs
 # V1.7
 # TODO: Verify all resources
 # V2.0

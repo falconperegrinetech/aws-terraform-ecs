@@ -4,3 +4,6 @@ public_subnets = ["10.0.1.0/24", "10.0.3.0/24"]
 prefix = "aws-ecs-bp"
 instance_type = "t2.micro"
 instance_key_name = "aws-ecs-bp"
+rds_pg_username = "rds_pg_username"
+rds_pg_password = "rds_pg_password"
+rds_pg_delete_protection = true

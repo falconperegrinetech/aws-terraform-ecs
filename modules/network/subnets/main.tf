@@ -21,3 +21,13 @@ resource "aws_default_subnet" "default_subnet_c" {
     "Description" = "Falcon Terraform AWS Boilerplates"
   })
 }
+
+resource "aws_db_subnet_group" "db_subnet" {
+  name       = "${var.prefix}-${terraform.workspace}-db-subnet"
+  subnet_ids = [aws_default_subnet.default_subnet_a.id, aws_default_subnet.default_subnet_b.id]
+
+  tags = merge(var.common_tags, {
+    "Name"        = "${var.prefix}-${terraform.workspace}-subnet-db"
+    "Description" = "Falcon Terraform AWS Boilerplates"
+  })
+}

@@ -31,3 +31,15 @@ variable "instance_type" {
 variable "instance_key_name" {
   type = string
 }
+
+variable "rds_pg_username" {
+  type = string
+}
+
+variable "rds_pg_password" {
+  type = string
+}
+
+variable "rds_pg_delete_protection" {
+  type = bool
+}
