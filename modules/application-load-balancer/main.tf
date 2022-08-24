@@ -13,6 +13,13 @@ resource "aws_lb_target_group" "this" {
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = var.vpc_id # Referencing the default VPC
+
+  health_check {
+    path              = "/"
+    healthy_threshold = 3
+    matcher           = "200"
+    timeout           = 5
+  }
 }
 
 

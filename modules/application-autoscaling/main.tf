@@ -73,7 +73,7 @@ resource "aws_appautoscaling_policy" "down" {
     metric_aggregation_type = "Maximum"
 
     step_adjustment {
-      metric_interval_lower_bound = 0
+      metric_interval_upper_bound = 0
       scaling_adjustment          = -1
     }
   }
@@ -139,7 +139,7 @@ resource "aws_cloudwatch_metric_alarm" "service_memory_high" {
 
 
 resource "aws_cloudwatch_metric_alarm" "service_memory_down" {
-  alarm_name          = "${var.prefix}-${terraform.workspace}-memory-utilization-down"
+  alarm_name          = "${var.prefix}-${terraform.workspace}-memory-utilization-low"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
   metric_name         = "MemoryUtilization"
