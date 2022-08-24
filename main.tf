@@ -83,7 +83,7 @@ module "autoscaling" {
 }
 
 # V1.1
-# TODO: Create Auto Scaling
+# DONE: Create Auto Scaling
 # V1.2
 # TODO: Create Private Subnet
 # TODO: Create RDS Postgres Instance
