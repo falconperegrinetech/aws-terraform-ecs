@@ -53,7 +53,7 @@ module "load_balancer" {
 
 }
 
-module "ecs_services" {
+module "ecs_service" {
   source                    = "./modules/elastic-container-services"
   subnet_a_id               = module.subnets.subnet_a_id
   subnet_b_id               = module.subnets.subnet_b_id
@@ -72,6 +72,14 @@ module "ecs_services" {
     module.iam,
     module.registry
   ]
+}
+
+module "autoscaling" {
+  source           = "./modules/application-autoscaling"
+  ecs_cluster_name = module.ecs_service.ecs_cluster_name
+  ecs_service_name = module.ecs_service.ecs_service_name
+  common_tags      = local.common_tags
+  prefix           = var.prefix
 }
 
 # V1.1
