@@ -96,11 +96,11 @@ module "database" {
 # V1.1
 # DONE: Create Auto Scaling
 # V1.2
-# TODO: Create Private Subnet
-# TODO: Create RDS Postgres Instance
+# DONE: Create Private Subnet
+# DONE: Create RDS Postgres Instance
 # V1.3
-# TODO: Crate Security Group RDS Postgres
-# TODO: Create Route Table
+# DONE: Crate Security Group RDS Postgres
+# NOT NECESSARY: Create Route Table
 # V1.4
 # TODO: Create all resources to Route53
 # V1.5
